@@ -1,0 +1,37 @@
+{
+    "name": "piloteers-code-task",
+    "version": "1.0.0",
+    "description": "Piloteers Code Task",
+    "main": "src/backend/server.js",
+    "scripts": {
+        "start": "NODE_ENV=production node ./src/backend/server.js",
+        "develop": "NODE_ENV=development node ./src/backend/server.js",
+        "fix": "node_modules/.bin/eslint --fix src",
+        "docs:lint": "node_modules/.bin/documentation lint src",
+        "docs:build": "node_modules/.bin/documentation build src -f html -o docs -c documentation.yml --favicon assets/favicon.png",
+        "docs:serve": "node_modules/.bin/documentation serve src -f html -c documentation.yml --favicon assets/favicon.png"
+    },
+    "keywords": [],
+    "author": {
+        "name": "Oliver Sieweke",
+        "email": "oliver@sieweke.com",
+        "url": "https://www.oliversieweke.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/OliverSieweke/piloteers-code-task.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=10.15.3",
+        "npm": ">=6.9.0"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "documentation": "^11.0.0",
+        "eslint": "^5.16.0",
+        "eslint-plugin-jest": "^22.6.4",
+        "eslint-plugin-jsdoc": "^7.0.2",
+        "jest": "^24.8.0"
+    }
+}
