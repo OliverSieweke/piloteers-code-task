@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Piloteers Code Task</title>
+    <link href="assets/favicon.png" rel='icon' />
+    <link href="stylesheets/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script type="module" src="javascripts/script.js"></script>
 </head>
 <body>
-
+<main>
+    <section id="upload">
+        <input id="file-input" type="file" name="file" accept=".json" />
+        <div id="upload-text">
+            <label id="upload-button" for="file-input">Choose a file</label>
+            <span>or drag it here!</span>
+        </div>
+        <div id="file-display">
+            Only .json files are supported.
+        </div>
+        <div id="upload-error" class="hidden">
+            <span id="hide-upload-error">&#10005;</span>
+            <span id="upload-error-message"></span>
+        </div>
+    </section>
+    <button id="submit" disabled>Upload Location!</button>
+</main>
 </body>
 </html>

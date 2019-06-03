@@ -1,0 +1,121 @@
+/* ------------------------------------------- LAYOUT ------------------------------------------- */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #494E6B;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    height: 40vh;
+    width: 40vw;
+    min-height: 200px;
+    min-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+#submit {
+    flex: 0 0 2em;
+}
+#upload {
+    flex: 1 1;
+}
+#upload, #submit {
+    box-shadow: 0 0 4px #192231;
+    margin: 5px;
+}
+
+/* ------------------------------------------- UPLOAD ------------------------------------------- */
+/* UPLOAD SECTION */
+#upload {
+    padding: 20px;
+    outline: 2px dashed #192231;
+    outline-offset: -9px;
+    background: white;
+    transition: all 0.1s;
+}
+#upload.active {
+    outline: 2px dashed #985E6D;
+    outline-offset: -15px;
+}
+#file-input {
+    display: none
+}
+
+/* UPLOAD TEXT */
+#upload-text, #file-display {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    line-height: 1.5em;
+}
+#upload-text {
+    font-size: 1.3em;
+}
+#file-display {
+    font-size: 0.8em;
+    color: #985E6D;
+}
+
+#upload-button {
+    border: 2px solid #985E6D;
+    padding: 2px 6px;
+    margin: 0 1px;
+    color: #985E6D;
+}
+#upload-button:hover {
+    cursor: pointer;
+    color: white;
+    background: #985E6D;
+}
+
+/* UPLOAD ERROR */
+#upload-error {
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 -4px 4px -4px #192231;
+    border: 1px solid #192231;
+    background: #ffe49a;
+}
+#upload-error.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: none;
+}
+#upload-error.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.4s ease-in;
+}
+
+#hide-upload-error {
+    position: absolute;
+    left: 0;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* ------------------------------------------- SUBMIT ------------------------------------------- */
+#submit {
+    font-size: 1em;
+    border-radius: 2em;
+    color: white;
+    background: #985E6D;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+#submit:disabled {
+    cursor: not-allowed;
+    filter: opacity(0.6);
+    box-shadow: inset 0 0 8px #192231;
+    border: none;
+}
