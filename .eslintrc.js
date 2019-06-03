@@ -679,7 +679,7 @@ module.exports = {
         "no-async-promise-executor": "error",
         "no-await-in-loop": "warn",
         "no-misleading-character-class": "error",
-        "no-prototype-builtins": "warn",                                        // airbnb
+        "no-prototype-builtins": "off",                                        // airbnb
         "no-template-curly-in-string": "error",
         "require-atomic-updates": "warn",
 
@@ -757,8 +757,9 @@ module.exports = {
             "warn",
             {
                 ignore: [
-                    0, 1,
-                    404, 500                                                    // HTTP Codes
+                    -1, 0, 1, 2,
+                    180,                                                         // Degrees
+                    201, 400, 404, 409, 415, 422, 500                            // HTTP Codes
                 ],
                 ignoreArrayIndexes: true,
                 enforceConst: true,
@@ -843,7 +844,9 @@ module.exports = {
             {
                 builtinGlobals: true,
                 hoist: "all",
-                allow: [],
+                allow: [
+                    "err"
+                ],
             },
         ],
         "no-shadow-restricted-names": "error",
@@ -908,6 +911,7 @@ module.exports = {
                 exceptions: [
                     "i", "j", "k",                                              // Loop indices
                     "x", "y", "z",                                              // Standard variables
+                    "a", "b", "c",                                              // Standard variables
                     "e",                                                        // Event
                     "id"
                 ],
@@ -934,7 +938,7 @@ module.exports = {
                 tabWidth: 4,
                 comments: 120,
                 ignorePattern: "",
-                ignoreComments: false,
+                ignoreComments: true,
                 ignoreTrailingComments: true,
                 ignoreUrls: true,
                 ignoreStrings: true,

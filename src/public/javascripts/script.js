@@ -97,7 +97,7 @@ function submitFile() {
     const formData = new FormData();
     const [file] = fileInput.files;
 
-    formData.append("file", file);
+    formData.append("location", file);
 
     fetch("/location", {
         method: "POST",

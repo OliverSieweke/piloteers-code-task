@@ -7,6 +7,12 @@ This is a coding task done for Piloteers aiming at providing an external endpoin
 
 ## Documentation
 
+### External API
+
+The External API documentation was written using [Swagger](https://swagger.io/) and can be found [here](https://app.swaggerhub.com/apis-docs/Oliver-Sieweke/piloteers-code-task/1.0.0).
+
+### Internal API
+
 You can find the project's documentation [here](http://htmlpreview.github.io/?https://github.com/OliverSieweke/piloteers-code-task/blob/master/docs/index.html). (Depending on your browser configurations, you may encounter issues viewing the 
 documentation properly through the github html preview - in that case you may prefer to directly open the `/docs/index` file on your local machine)
 
