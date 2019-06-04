@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="location details" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.nvm/versions/node/v10.15.3/bin/node" path-to-js-file="get-location-details.js" working-dir="$PROJECT_DIR$/src/backend/lib">
+    <envs>
+      <env name="NODE_ENV" value="development" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

@@ -757,7 +757,7 @@ module.exports = {
             "warn",
             {
                 ignore: [
-                    -1, 0, 1, 2,
+                    -1, 0, 1, 2, 3,
                     180,                                                         // Degrees
                     201, 400, 404, 409, 415, 422, 500                            // HTTP Codes
                 ],

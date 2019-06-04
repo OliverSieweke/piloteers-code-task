@@ -6,6 +6,8 @@
     "scripts": {
         "start": "NODE_ENV=production node ./src/backend/server.js",
         "develop": "NODE_ENV=development node ./src/backend/server.js",
+        "test": "jest",
+        "test:coverage": "jest --collectCoverage",
         "fix": "node_modules/.bin/eslint --fix src",
         "docs:lint": "node_modules/.bin/documentation lint src",
         "docs:build": "node_modules/.bin/documentation build src -f html -o docs -c documentation.yml --favicon assets/favicon.png",
@@ -36,6 +38,7 @@
         "eslint": "^5.16.0",
         "eslint-plugin-jest": "^22.6.4",
         "eslint-plugin-jsdoc": "^7.0.2",
-        "jest": "^24.8.0"
+        "jest": "^24.8.0",
+        "supertest": "^4.0.2"
     }
 }

@@ -9,27 +9,29 @@ Please execute the following commands:
 
 ```bash
 $ git clone git@github.com:OliverSieweke/piloteers-code-task.git
+$ cd piloteers-code-task
 $ npm install
 $ npm run start
 ```
 A server should be running and listening on  `localhost:7080`.
 
-You can now upload files through the interface by navigating to `localhost:7080` with the browser or use another 
-tool of your choice to make a direct POST request.
+You can now upload locations through the interface by navigating to `localhost:7080` with the browser (alternatively you
+ may use another tool of your choice to send a JSON file as form-data under the `location` key with a POST request to the `/location` 
+path).
  
 **NB**: You may change the port in the `configs.json` file.
 
 To use the internal API methods you may require the exposed methods wherever needed. E.g:
 
 ```js
-const { getLocationList } = require("./lib/get-location-list.js")
-getLocationList().then(locationList => [...])
-                 .catch(err => [...])
+const { getLocationList } = require("./src/backend/lib/get-location-list.js")
+getLocationList().then(locationList => {/* [...] */})
+                 .catch(err => {/* [...] */})
 ```
 ```js
-const { getLocationDetails } = require("./lib/get-location-details.js")
-getLocationDetails("paris").then(parisDetails => [...])
-                           .catch(err => [...])
+const { getLocationDetails } = require("./src/backend/lib/get-location-details.js")
+getLocationDetails("paris").then(parisDetails => {/* [...] */})
+                           .catch(err => {/* [...] */})
 ```
 
 ## Documentation
@@ -45,4 +47,15 @@ documentation properly through the github html preview - in that case you may pr
 
 The project's documentation uses [JSDoc](http://usejsdoc.org/index.html) syntax and is generated with [documentation.js](https://documentation.js.org/).
 
+## Testing
 
+Tests are implemented using the [JEST](https://jestjs.io/) framework and can be run with one of the following:
+
+```bash
+$ npm run test
+```
+```bash
+$ npm run test:coverage
+```
+
+The tests include unit and integration tests and cover over 90% of the code.

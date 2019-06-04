@@ -22,4 +22,6 @@ app.use((err, req, res, next) => { /* eslint-disable-line no-unused-vars */ // F
     res.status(500).send();
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port} in ${process.env.NODE_ENV} mode !`));
+const server = app.listen(port, () => console.log(`Server listening on port ${port} in ${process.env.NODE_ENV} mode !`));
+
+module.exports = { server };

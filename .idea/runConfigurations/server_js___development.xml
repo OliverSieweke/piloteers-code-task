@@ -1,0 +1,8 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="server.js - development" type="NodeJSConfigurationType" path-to-node="$USER_HOME$/.nvm/versions/node/v10.15.3/bin/node" path-to-js-file="server.js" working-dir="$PROJECT_DIR$/src/backend">
+    <envs>
+      <env name="NODE_ENV" value="development" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>

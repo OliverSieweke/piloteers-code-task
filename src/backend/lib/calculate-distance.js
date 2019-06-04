@@ -13,7 +13,7 @@ const { latitude: officeLatitude, longitude: officeLongitude } = require("../loc
  *
  * @param   {number}          locationLatitude
  * @param   {number}          locationLongitude
- * @return  {number}          Distance to the office in kilometers
+ * @return  {number}          Distance to the office in kilometers (rounded to 3 decimals)
  */
 function calculateDistanceToOffice(locationLatitude, locationLongitude) {
 
@@ -28,7 +28,7 @@ function calculateDistanceToOffice(locationLatitude, locationLongitude) {
 
     const distance = 2*EARTH_RADIUS*Math.asin((term1 + term2)**(1/2));
 
-    return distance;
+    return Number(distance.toFixed(3));
 }
 
 function degreesToRadians(degrees) {
