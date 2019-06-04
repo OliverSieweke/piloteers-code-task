@@ -10,6 +10,12 @@ const locationSchema = require("../location.schema.json");
 const Ajv = require("ajv");
 const ajv = new Ajv();
 
+/**
+ * Validates location JSON documents according to the schema location.schema.json.
+ *
+ * @param   {string}    filename        With .json extension
+ * @return  {Promise<boolean|Error>}    Returns a boolean indicating the validity or an error object if the location could not be found or parsed.
+ */
 async function validateLocation(filename) {
     const absolutePath = path.join(__dirname, `../locations/${filename}`);
 

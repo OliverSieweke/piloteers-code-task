@@ -1,1 +1,17 @@
 toc:
+  - name: Internal API
+    description: This section describes the internal API methods used to reatrieve location data.
+  - getLocationList
+  - getLocationDetails
+  - name: Utilities
+    description: This section lists the various utility functions
+  - validateLocation
+  - calculateDistanceToOffice
+  - formatPromise
+  - name: Promisified Node Methods
+    description: This section lists the promisified versions of native Node fs methods found in fs-promisified.js.
+  - accessPromisified
+  - readdirPromisified
+  - readFilePromisified
+  - unlinkPromisified
+

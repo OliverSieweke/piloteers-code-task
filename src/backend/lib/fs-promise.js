@@ -1,13 +1,21 @@
 "use strict";
 
-const { access, readFile, unlink } = require("fs");
+const { access, readdir, readFile, unlink } = require("fs");
 
 module.exports = {
     access: accessPromisified,
+    readdir: readdirPromisified,
     readFile: readFilePromisified,
     unlink: unlinkPromisified,
 };
 
+/**
+ * Promisified version of fs.access.
+ *
+ * @async
+ * @param   {string}    path
+ * @param   {number}    [mode]
+ */
 function accessPromisified(path, mode) {
     return new Promise((resolve, reject) => {
         access(
@@ -17,6 +25,31 @@ function accessPromisified(path, mode) {
         );
     });
 }
+
+/**
+ * Promisified version of fs.readdir.
+ *
+ * @async
+ * @param   {string}    path
+ * @param   {object}    [options]
+ */
+function readdirPromisified(path, options = {}) {
+    return new Promise((resolve, reject) => {
+        readdir(
+            path,
+            options,
+            (err, result) => (err ? reject(err) : resolve(result)),
+        );
+    });
+}
+
+/**
+ * Promisified version of fs.readFile.
+ *
+ * @async
+ * @param   {string}    path
+ * @param   {object}    [options]
+ */
 function readFilePromisified(path, options = {}) {
     return new Promise((resolve, reject) => {
         readFile(
@@ -27,6 +60,12 @@ function readFilePromisified(path, options = {}) {
     });
 }
 
+/**
+ * Promisified version of fs.unlink.
+ *
+ * @async
+ * @param   {string}    path
+ */
 function unlinkPromisified(path) {
     return new Promise((resolve, reject) => {
         unlink(
