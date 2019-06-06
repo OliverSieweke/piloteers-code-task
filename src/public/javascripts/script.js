@@ -8,6 +8,10 @@ const uploadError = document.getElementById("upload-error");
 const uploadErrorMessage = document.getElementById("upload-error-message");
 const hideUploadError = document.getElementById("hide-upload-error");
 const submit = document.getElementById("submit");
+const modalContainer = document.getElementById("modal-container");
+const modalCross = document.getElementById("modal-cross");
+const cover = document.getElementById("cover");
+const modalText = document.getElementById("modal-text");
 
 // ---------------------------------------------------------------------------------------------- \\
 // ---------------------------------------- FILE DISPLAY ---------------------------------------- \\
@@ -92,8 +96,10 @@ function hideError() {
 // ---------------------------------------------------------------------------------------------- \\
 // ----------------------------------------- SUBMISSION ----------------------------------------- \\
 submit.addEventListener("click", submitFile);
+modalCross.addEventListener("click", closeModal);
 
 function submitFile() {
+    let responseStatus;
     const formData = new FormData();
     const [file] = fileInput.files;
 
@@ -102,6 +108,28 @@ function submitFile() {
     fetch("/location", {
         method: "POST",
         body: formData,
-    });
-    // TODO: handle response and errors. Maybe add spinner
+    })
+        .then(response => {
+            ({ status: responseStatus } = response);
+            return response.text();
+        })
+        .then(text => {
+            modalText.innerText = responseStatus === 201 ? "Your location was added successfully" : `Error: ${text}.`;
+            showModal();
+        })
+        .catch(() => {
+            modalText.innerText = "An unexpected network error occured.";
+            showModal();
+        });
+}
+
+
+function showModal() {
+    cover.style.display = "block";
+    modalContainer.style.display = "flex";
+}
+
+function closeModal() {
+    cover.style.display = "none";
+    modalContainer.style.display = "none";
 }
